@@ -39,15 +39,15 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
-a {
+a, button {
   font-weight: 600;
   color: #314584;
   text-decoration: none;
   letter-spacing: 1px;
   position: relative;
 }
-a:focus,
-a:hover {
+a, button:focus,
+a, button:hover {
   color: rgba(44, 44, 44, 0.8);
   text-decoration: none;
 }

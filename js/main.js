@@ -1,3 +1,17 @@
+function myFunctionToHide() {
+  var x = document.getElementById("DIVToHide");
+  /*if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }*/
+  x.style.display = x.style.display === 'block' ? 'none':'block' ;
+
+
+
+
+}
+
 $('.interactive-menu-button a').click(function() {
   $(this).toggleClass('active');
 });
