@@ -291,7 +291,7 @@ p {
   font-size: 1.1rem;
 }
 .hero-btns {
-  margin-bottom: 350px;
+  margin-bottom: 50px;
 }
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
   color: #FF3946;
@@ -618,7 +618,7 @@ footer h6 {
 }
 @media (max-width: 1500px) {
   .hero img {
-    margin-top: 130px;
+    margin-top: 100px;
   }
 }
 @media (max-width: 1350px) {
@@ -687,7 +687,7 @@ footer h6 {
     display: none;
   }
   .hero-btns {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
   }
   .service-txt {
     text-align: center;
