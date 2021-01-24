@@ -5,7 +5,7 @@ function myFunctionToHide() {
   } else {
     x.style.display = "none";
   }*/
-  x.style.display = x.style.display === 'block' ? 'none':'block' ;
+  x.style.display = x.style.display === 'flex' ? 'none':'flex' ;
 }
 
 $('.interactive-menu-button a').click(function() {

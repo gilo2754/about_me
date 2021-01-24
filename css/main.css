@@ -769,3 +769,10 @@ footer h6 {
   }
 }
 
+/*center my calender*/
+.parent-div{
+  justify-content: center;
+  align-items: center;
+
+
+}
