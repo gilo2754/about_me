@@ -19,9 +19,9 @@ $('.more-btn').click(function() {
   $('#hiden-gallery').toggleClass('hide');
   $('#hiden-gallery').toggleClass('open');
   if ( $('#hiden-gallery').is( ".open" ) ) {
-    $(".more-btn-inside").text("Show Less.");
+    $(".more-btn-inside").text("<-Show Less->");
   }else {
-    $(".more-btn-inside").text("Show More.");
+    $(".more-btn-inside").text("<-Show More->");
   }
 });
 
@@ -87,7 +87,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="decountDown"
-  document.getElementById("countDown").innerHTML = days + "d " + hours + "h "  + minutes + "m " + seconds + "s ";
+  document.getElementById("countDown").innerHTML ="🎓 in " + days + "d " + hours + "h "  + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text
   if (distance < 0) {
