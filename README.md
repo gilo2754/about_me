@@ -1,3 +1,8 @@
-# about_me is my CV on a website to show what I can do still now.
+This site shows me as web-developer.
 
-My goal is becoming a web developer in the short future (april/may 2021) 
+Coming soon:
+- API requests
+- Dark mode
+- Offline mode
+- Local Storage
+- Connection with a data base
