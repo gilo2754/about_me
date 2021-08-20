@@ -70,7 +70,7 @@ $('#blog-btn').click(function() {
 
 
 //Count-Down for TH Köln WI
-var countDownDate = new Date("Aug 15, 2021 15:37:25").getTime();
+var countDownDate = new Date("Nov 15, 2021 15:37:25").getTime();
 // Update the count down every 1 second
 var x = setInterval(function() {
 
