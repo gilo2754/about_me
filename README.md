@@ -1,8 +1,1 @@
-This site shows me as web-developer.
-
-Coming soon:
-- API requests
-- Dark mode
-- Offline mode
-- Local Storage
-- Connection with a data base
+This site for my portfolio as SW-Engineer on unmega.com
