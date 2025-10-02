@@ -1,0 +1,91 @@
+{
+  "navigation": {
+    "about": "Über mich",
+    "experience": "Erfahrung",
+    "work": "Projekte",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "greeting": "Hallo, ich bin",
+    "name": "Carlo Menjivar",
+    "tagline": "Von Embedded Electronics zu modernem Web.",
+    "description": "Ich bin Software Engineer bei {capgemini} in der Region Köln Bonn. Absolvent der {university} mit Expertise in modernen Web-Technologien, zertifiziert in Scrum-Methodik und spezialisiert auf innovative digitale Lösungen.",
+    "getInTouch": "Kontakt aufnehmen",
+    "email": "carlo@unmega.com"
+  },
+  "about": {
+    "title": "Über mich",
+    "bio1": "Hallo! Ich bin Carlo, Software Engineer bei {capgemini} in der Region Köln Bonn, Deutschland. Meine Reise in der Technologie begann mit der elektronischen Systemgestaltung für Solartracking-Systeme, was meine Leidenschaft für innovative digitale Lösungen entfachte.",
+    "bio2": "Ich habe an der {university} (2017-2021) studiert und spezialisiere mich auf moderne Web-Technologien wie Angular, Spring Boot und React. Ich bin zertifizierter Professional Scrum Master und ISTQB Foundation Level Professional.",
+    "bio3": "Mein einzigartiger Hintergrund umfasst sowohl traditionelles Engineering (Solartracking-Systeme, 2008-2014) als auch moderne Softwareentwicklung. Ich begeistere mich für KI-Technologien und habe kürzlich Google-Zertifizierungen in verantwortungsvollem KI-Einsatz und Produktivitätstools abgeschlossen.",
+    "skillsTitle": "Technische Fähigkeiten",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "methodologies": "Methoden & Tools",
+    "innovation": "KI & Innovation",
+    "experienceTitle": "Berufserfahrung"
+  },
+  "experience": {
+    "title": "Wo ich gearbeitet habe",
+    "viewResume": "Vollständigen Lebenslauf ansehen"
+  },
+  "work": {
+    "title": "Einige Dinge, die ich gebaut habe",
+    "featuredProjects": "Hauptprojekte",
+    "otherProjects": "Weitere bemerkenswerte Projekte",
+    "callToAction": "Möchten Sie mehr von meiner Arbeit sehen oder an einem Projekt zusammenarbeiten?"
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Ich bin derzeit für Freelance-Projekte und Beratungsmöglichkeiten verfügbar. Ob Sie ein Projekt im Kopf haben oder einfach nur über Technologie sprechen möchten, ich würde gerne von Ihnen hören!",
+    "connectTitle": "Lass uns vernetzen",
+    "followMe": "Folgen Sie mir",
+    "sendMessage": "Nachricht senden",
+    "name": "Name",
+    "email": "E-Mail",
+    "company": "Unternehmen (Optional)",
+    "subject": "Betreff",
+    "message": "Nachricht",
+    "sending": "Wird gesendet...",
+    "send": "Nachricht senden",
+    "successMessage": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden.",
+    "labels": {
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "location": "Standort"
+    },
+    "placeholders": {
+      "name": "Ihr Name",
+      "email": "ihre.email@beispiel.com",
+      "company": "Ihr Unternehmen",
+      "subject": "Projektdiskussion, Zusammenarbeit, etc.",
+      "message": "Erzählen Sie mir von Ihrem Projekt oder wie ich Ihnen helfen kann..."
+    },
+    "validation": {
+      "nameRequired": "Name ist erforderlich",
+      "emailRequired": "E-Mail ist erforderlich",
+      "emailInvalid": "Ungültige E-Mail-Adresse",
+      "subjectRequired": "Betreff ist erforderlich",
+      "messageRequired": "Nachricht ist erforderlich"
+    }
+  },
+  "footer": {
+    "builtWith": "Erstellt mit {nextjs} & {tailwind}",
+    "copyright": "© {year} Carlo Menjivar. Alle Rechte vorbehalten.",
+    "backToTop": "Nach oben"
+  },
+  "projects": {
+    "mernApp": {
+      "title": "MERN Web-Anwendung",
+      "description": "Full-Stack-Webanwendung mit dem MERN-Stack (MongoDB, Express.js, React, Node.js). Zeigt umfassende Full-Stack-Entwicklungsfähigkeiten von Datenbankdesign bis Frontend-Implementierung."
+    },
+    "qrEsp32": {
+      "title": "QR Code ESP32 System",
+      "description": "IoT-Projekt, das Embedded Electronics mit Softwareentwicklung kombiniert. QR-Code-Scanning-System mit ESP32-Mikrocontroller und Python. Verbindet Hardware- und Software-Expertise aus dem Embedded Electronics-Hintergrund."
+    },
+    "solarTracking": {
+      "title": "Solartracking-System",
+      "description": "Innovatives Solartracking-System mit fortschrittlicher Sensortechnologie und automatisierten Berechnungen. Veröffentlichte Forschung zu \"Detalles de un sistema de seguimiento solar por sensores y cálculos\". Kombiniert Hardware-Sensoren mit intelligenten Software-Algorithmen für optimale Solarpanel-Positionierung."
+    }
+  }
+}
