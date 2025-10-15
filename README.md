@@ -1,5 +1,3 @@
-# Carlo Menjivar - Portfolio Website
-
 A modern, responsive portfolio website built with Next.js 15, Tailwind CSS, and Framer Motion. Designed for a Full-Stack Software Engineer freelancer based in Germany.
 
 ## 🚀 Features
