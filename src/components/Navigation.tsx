@@ -4,19 +4,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
-import { useTranslations, useLocale } from 'next-intl';
-import LanguageSwitcher from './LanguageSwitcher';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const t = useTranslations('navigation');
-  const locale = useLocale();
 
   const navItems = [
-    { name: t('about'), href: `/${locale}/about`, num: '01' },
-    { name: t('experience'), href: `/${locale}/experience`, num: '02' },
-    { name: t('work'), href: `/${locale}/work`, num: '03' },
-    { name: t('contact'), href: `/${locale}/contact`, num: '04' },
+    { name: 'Über uns', href: '/about', num: '01' },
+    { name: 'Unser Portfolio', href: '/work', num: '02' },
+    { name: 'Branchenlösungen', href: '/solutions', num: '03' },
+    { name: 'Kontakt', href: '/contact', num: '04' },
   ];
 
   return (
@@ -28,8 +24,8 @@ const Navigation = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Link href={`/${locale}`} className="text-teal-400 text-2xl font-bold hover:text-teal-300 transition-colors">
-            CM
+          <Link href="/" className="text-teal-400 text-2xl font-bold hover:text-teal-300 transition-colors">
+            
           </Link>
         </motion.div>
 
@@ -50,7 +46,6 @@ const Navigation = () => {
               <span className="text-sm font-medium tracking-wide">{item.name}</span>
             </Link>
           ))}
-          <LanguageSwitcher />
         </motion.div>
 
         {/* Mobile Menu Button */}
