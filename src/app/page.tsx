@@ -32,10 +32,12 @@ export default function Home() {
             className="text-slate-400 text-lg max-w-lg leading-relaxed"
           >
             Wir sind ein spezialisiertes Entwicklungsteam, das{' '}
-            <span className="text-teal-400">KI-gestützte Geschäftslösungen</span> für den Mittelstand entwickelt. 
+            <span className="text-teal-400">KI-gestützte Geschäftslösungen</span> für den deutschen Mittelstand entwickelt. 
             Unser Team kombiniert moderne <span className="text-teal-400">Web-Technologien</span> 
             mit künstlicher Intelligenz, um messbare Effizienzsteigerungen 
-            und Kostenreduktionen für Ihr Unternehmen zu erreichen.
+            und Kostenreduktionen zu erreichen. Alle Lösungen sind{' '}
+            <span className="text-teal-400">DSGVO-konform</span> und entsprechen 
+            deutschen Datenschutzstandards.
           </motion.p>
 
           <motion.div

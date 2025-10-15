@@ -98,9 +98,10 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed"
           >
-            Unser Team ist bereit, Ihre Geschäftsherausforderungen mit maßgeschneiderten KI-Lösungen zu lösen. 
-            Ob Sie Fragen zu unseren Produkten haben oder ein individuelles Projekt besprechen möchten, 
-            wir freuen uns auf Ihren Kontakt!
+            Unser Team ist bereit, Ihre Geschäftsherausforderungen mit maßgeschneiderten, 
+            <strong className="text-teal-400">datenschutzkonformen KI-Lösungen</strong> zu lösen. 
+            Als deutsches Unternehmen verstehen wir die besonderen Anforderungen des Mittelstands 
+            und entwickeln Lösungen, die höchsten Sicherheitsstandards entsprechen.
           </motion.p>
         </motion.div>
 

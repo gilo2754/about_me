@@ -80,10 +80,24 @@ export default function Work() {
             Unser Portfolio
           </h1>
           <div className="w-24 h-0.5 bg-teal-400 mx-auto mb-8"></div>
-          <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed mb-6">
             Drei KI-gestützte Lösungen, die echte Geschäftsprobleme lösen und messbaren ROI liefern. 
             Jedes Projekt spart Ihrem Unternehmen Zeit und Geld.
           </p>
+          <div className="flex items-center justify-center space-x-6 text-sm">
+            <div className="flex items-center space-x-2 text-teal-400">
+              <span>🔒</span>
+              <span>DSGVO-konform</span>
+            </div>
+            <div className="flex items-center space-x-2 text-teal-400">
+              <span>🟨⬛🟥</span>
+              <span>Deutsche Standards</span>
+            </div>
+            <div className="flex items-center space-x-2 text-teal-400">
+              <span>⚡</span>
+              <span>Bewährte Technologien</span>
+            </div>
+          </div>
         </motion.div>
 
         {/* Featured Projects */}

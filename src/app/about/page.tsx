@@ -44,6 +44,11 @@ const companyValues = [
     icon: FiUsers,
     title: 'Kundenzentriert',
     description: 'Ihre Herausforderungen stehen im Mittelpunkt unserer Lösungen.'
+  },
+  {
+    icon: FiShield,
+    title: 'Datenschutzkonform',
+    description: 'Alle Lösungen entsprechen der DSGVO und dem Bundesdatenschutzgesetz (BDSG).'
   }
 ];
 
@@ -100,12 +105,29 @@ export default function About() {
           className="bg-slate-800/30 rounded-lg p-8 border border-slate-700 mb-16"
         >
           <h2 className="text-2xl font-bold text-slate-100 mb-6 text-center">Unsere Mission</h2>
-          <p className="text-slate-400 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+          <p className="text-slate-400 text-lg leading-relaxed text-center max-w-4xl mx-auto mb-6">
             Bei UnMega entwickeln wir KI-gestützte Lösungen, die echte Geschäftsprobleme lösen. 
             Wir glauben daran, dass Technologie praktisch, benutzerfreundlich und profitabel sein sollte. 
             Unser Ziel ist es, Unternehmen dabei zu helfen, Zeit zu sparen, Kosten zu reduzieren 
             und ihre Effizienz zu steigern.
           </p>
+          <div className="bg-teal-400/10 border border-teal-400/30 rounded-lg p-6 max-w-4xl mx-auto">
+            <h3 className="text-teal-400 font-semibold mb-3 text-center">🔒 Vertrauen und Sicherheit für deutsche Unternehmen</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <div className="text-slate-300">
+                <strong>✓ DSGVO-konform:</strong> Vollständige Einhaltung der Datenschutz-Grundverordnung
+              </div>
+              <div className="text-slate-300">
+                <strong>✓ BDSG-compliant:</strong> Entspricht dem Bundesdatenschutzgesetz
+              </div>
+              <div className="text-slate-300">
+                <strong>✓ Deutsche Infrastruktur:</strong> Hosting in Deutschland möglich
+              </div>
+              <div className="text-slate-300">
+                <strong>✓ Transparenz:</strong> Offene Kommunikation über Datenverarbeitung
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Company Values */}
@@ -116,7 +138,7 @@ export default function About() {
           className="mb-16"
         >
           <h2 className="text-2xl font-bold text-slate-100 mb-8 text-center">Unsere Werte</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {companyValues.map((value, index) => {
               const IconComponent = value.icon;
               return (
