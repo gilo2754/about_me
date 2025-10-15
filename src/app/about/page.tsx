@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiCode, FiDatabase, FiCloud, FiSmartphone, FiUsers, FiTarget, FiZap } from 'react-icons/fi';
+import { FiCode, FiDatabase, FiCloud, FiSmartphone, FiUsers, FiTarget, FiZap, FiShield } from 'react-icons/fi';
 
 const teamMembers = [
   {
