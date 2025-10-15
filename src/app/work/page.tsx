@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiPlay, FiZap, FiMessageCircle, FiBarChart } from 'react-icons/fi';
-import { useState } from 'react';
 
 const featuredProjects = [
   {
