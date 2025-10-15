@@ -36,7 +36,7 @@ const Navigation = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="hidden md:flex items-center space-x-8"
         >
-          {navItems.map((item, index) => (
+          {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
@@ -69,7 +69,7 @@ const Navigation = () => {
             className="fixed top-0 right-0 w-full h-screen bg-slate-900/95 backdrop-blur-sm md:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full space-y-8">
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}

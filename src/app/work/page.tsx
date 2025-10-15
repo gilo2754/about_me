@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiExternalLink, FiPlay, FiFolder, FiZap, FiMessageCircle, FiBarChart } from 'react-icons/fi';
+import { FiExternalLink, FiPlay, FiZap, FiMessageCircle, FiBarChart } from 'react-icons/fi';
 import { useState } from 'react';
 
 const featuredProjects = [
@@ -63,7 +63,6 @@ const featuredProjects = [
 ];
 
 export default function Work() {
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen pt-20 px-6 md:px-12 lg:px-24 py-16">
@@ -110,8 +109,6 @@ export default function Work() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
-                onMouseEnter={() => setHoveredProject(project.id)}
-                onMouseLeave={() => setHoveredProject(null)}
                 className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ${
                   index % 2 === 1 ? 'lg:text-right' : ''
                 }`}
