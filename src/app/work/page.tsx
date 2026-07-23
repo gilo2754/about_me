@@ -145,7 +145,7 @@ export default function Work() {
                       {/* Hover Overlay */}
                       <div className="absolute inset-0 bg-teal-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div className="text-center">
-                          <FiPlay className="text-teal-400 mx-auto mb-2" size={48} />
+                          <FiExternalLink className="text-teal-400 mx-auto mb-2" size={48} />
                           <p className="text-teal-400 font-medium">Demo ansehen</p>
                         </div>
                       </div>
