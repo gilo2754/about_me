@@ -16,10 +16,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-teal-400 font-mono text-sm mb-6">Willkommen bei</p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-100 mb-4">
-              UnMega
-            </h1>
+            <p className="text-teal-400 font-mono text-sm mb-6">Willkommen bei UnMega</p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-400 mb-6">
               Digitale Lösungen für kleine und mittlere Unternehmen.
             </h2>
