@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub } from 'react-icons/fi';
+import { FiMail, FiMapPin, FiLinkedin } from 'react-icons/fi';
 import { useState } from 'react';
 
 interface ContactForm {
@@ -21,12 +21,6 @@ const contactInfo = [
     href: 'mailto:info@unmega.com'
   },
   {
-    icon: FiPhone,
-    label: 'Phone',
-    value: '+49 123 456 7890',
-    href: 'tel:+491234567890'
-  },
-  {
     icon: FiMapPin,
     label: 'Location',
     value: 'Cologne, Germany',
@@ -39,11 +33,6 @@ const socialLinks = [
     icon: FiLinkedin,
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/carlo-menjivar-01608452/'
-  },
-  {
-    icon: FiGithub,
-    label: 'GitHub',
-    href: 'https://github.com/gilo2754'
   }
 ];
 
@@ -60,15 +49,15 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
-    
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form data:', data);
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error('send failed');
       setSubmitSuccess(true);
       reset();
-      
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
       console.error('Error submitting form:', error);

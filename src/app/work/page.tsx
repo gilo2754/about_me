@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiExternalLink, FiPlay, FiZap, FiMessageCircle, FiBarChart } from 'react-icons/fi';
+import { FiExternalLink, FiZap, FiMessageCircle, FiBarChart, FiShoppingCart } from 'react-icons/fi';
 
 const featuredProjects = [
   {
@@ -20,7 +20,7 @@ const featuredProjects = [
     ],
     demoDescription: 'Lädt fiktives "Mitarbeiter Handbuch" → Beantwortet Fragen wie "Wie viele Urlaubstage habe ich?" und "Prozess für Krankmeldung?"',
     liveUrl: 'https://smartdocs-demo.unmega.com',
-    videoUrl: 'https://demo-videos.unmega.com/smartdocs'
+    videoUrl: ''
   },
   {
     id: 2,
@@ -39,10 +39,28 @@ const featuredProjects = [
     ],
     demoDescription: 'Verkaufsdaten-Dashboard zeigt: monatliche Verkäufe, Top-Produkte, Kunden. KI generiert Analyse: "Verkäufe fielen 15% im März..." mit Handlungsempfehlungen.',
     liveUrl: 'https://bi-dashboard-demo.unmega.com',
-    videoUrl: 'https://demo-videos.unmega.com/bi-dashboard'
+    videoUrl: ''
   },
   {
     id: 3,
+    icon: FiShoppingCart,
+    title: 'shop.vekpower.com',
+    subtitle: 'Online-Shop für Fitness & Sportequipment',
+    description: 'Vollständiger E-Commerce-Shop mit modernem Design und optimierter User Experience. Schnell, mobilfreundlich und konversionsorientiert — ein Beispiel dafür, was wir für kleine Unternehmen aufbauen.',
+    timeSaving: 'Verkauft 24/7 ohne manuellen Aufwand',
+    features: [
+      'Responsives Design für alle Geräte',
+      'Produktkatalog mit Filterfunktion',
+      'Warenkorb & sichere Checkout-Integration',
+      'SEO-optimiert für mehr organischen Traffic',
+      'Einfache Bestandsverwaltung'
+    ],
+    demoDescription: 'Live-Shop unter shop.vekpower.com — von der Produktseite bis zum Checkout ein flüssiges Einkaufserlebnis, gebaut für kleine Unternehmen mit großen Ambitionen.',
+    liveUrl: 'https://shop.vekpower.com',
+    videoUrl: ''
+  },
+  {
+    id: 4,
     icon: FiZap,
     title: 'AutoFlow - Automation Studio',
     subtitle: 'KI-gestützte Prozessautomatisierung',
@@ -57,7 +75,7 @@ const featuredProjects = [
     ],
     demoDescription: 'Live-Workflow-Demonstration: E-Mail senden → KI antwortet automatisch → Slack-Benachrichtigung erscheint in Echtzeit.',
     liveUrl: 'https://autoflow-demo.unmega.com',
-    videoUrl: 'https://demo-videos.unmega.com/autoflow'
+    videoUrl: ''
   }
 ];
 
@@ -140,7 +158,6 @@ export default function Work() {
                   <div>
                     <div className="flex items-center mb-4">
                       <IconComponent className="text-teal-400 mr-3" size={28} />
-                      <span className="text-teal-400 font-mono text-sm">Projekt {project.id}</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
                       {project.title}
@@ -190,15 +207,6 @@ export default function Work() {
                     >
                       <FiExternalLink size={16} />
                       <span>Live Demo</span>
-                    </a>
-                    <a
-                      href={project.videoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 px-6 py-3 border border-teal-400 text-teal-400 rounded-lg font-medium hover:bg-teal-400/10 transition-colors duration-200"
-                    >
-                      <FiPlay size={16} />
-                      <span>Video ansehen</span>
                     </a>
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiMessageCircle, FiBarChart, FiZap, FiHome, FiShield, FiTruck, FiShoppingBag, FiDollarSign, FiUser, FiCoffee, FiScissors, FiHeart, FiTool, FiBookOpen, FiCamera } from 'react-icons/fi';
+import { FiMessageCircle, FiBarChart, FiZap, FiHome, FiShield, FiTruck, FiShoppingBag, FiShoppingCart, FiUser, FiCoffee, FiScissors, FiHeart, FiTool, FiBookOpen, FiCamera } from 'react-icons/fi';
 
 const solutions = [
   {
@@ -10,22 +10,16 @@ const solutions = [
     description: 'Intelligente Dokumentensuche für Ihre Branche',
     applications: [
       {
-        industry: 'Banking & Finance',
-        useCase: 'Compliance-Dokumentation und Richtlinien',
-        benefit: 'Mitarbeiter finden Regelwerke sofort',
-        timeSaving: '8 Stunden/Woche pro Compliance-Team'
+        industry: 'Online Commerce',
+        useCase: 'Produktbeschreibungen, FAQ und Rückgaberichtlinien',
+        benefit: 'Kunden finden Antworten selbst — weniger Supportanfragen',
+        timeSaving: '5 Stunden/Woche bei Kundenanfragen gespart'
       },
       {
         industry: 'Versicherungen',
         useCase: 'Produktdokumentation und Schadensprozesse',
         benefit: 'Sachbearbeiter erhalten sofortige Antworten',
         timeSaving: '6 Stunden/Woche pro Sachbearbeiter'
-      },
-      {
-        industry: 'öffentlicher Sektor',
-        useCase: 'Behördenhandbücher und Verfahrensrichtlinien',
-        benefit: 'Bürgerservices werden beschleunigt',
-        timeSaving: '10 Stunden/Woche pro Sachbearbeiter'
       },
       {
         industry: 'Life Science',
@@ -71,10 +65,10 @@ const solutions = [
         timeSaving: 'Planungszeit um 75% reduziert'
       },
       {
-        industry: 'Banking',
-        useCase: 'Risikobewertung und Portfolio-Analyse',
-        benefit: 'Bessere Investitionsentscheidungen',
-        timeSaving: 'Reporting-Zeit von Wochen auf Stunden'
+        industry: 'Online Commerce',
+        useCase: 'Conversion-Analyse und Kundenverhalten im Shop',
+        benefit: 'Optimierte Produktseiten und gezieltere Werbung',
+        timeSaving: 'Analyse von Tagen auf 30 Minuten reduziert'
       },
       {
         industry: 'Versicherungen',
@@ -108,16 +102,10 @@ const solutions = [
     description: 'Prozessautomatisierung für wiederkehrende Aufgaben',
     applications: [
       {
-        industry: 'Banking',
-        useCase: 'Kreditantragsverarbeitung und KYC-Prozesse',
-        benefit: 'Vollautomatische Dokumentenprüfung',
-        timeSaving: '90% Automatisierung bei Standardanträgen'
-      },
-      {
-        industry: 'öffentlicher Sektor',
-        useCase: 'Bürgeranträge und Verwaltungsprozesse',
-        benefit: 'Digitale Antragsbearbeitung',
-        timeSaving: 'Bearbeitungszeit von Wochen auf Tage'
+        industry: 'Online Commerce',
+        useCase: 'Bestellabwicklung und automatische Kundenkommunikation',
+        benefit: 'Automatische Bestätigungen, Statusupdates und Rücksendungen',
+        timeSaving: '90% weniger manueller Aufwand bei Standardbestellungen'
       },
       {
         industry: 'Retail',
@@ -154,9 +142,8 @@ const solutions = [
 ];
 
 const industries = [
-  { icon: FiDollarSign, name: 'Banking & Finance', color: 'from-green-400 to-green-600' },
+  { icon: FiShoppingCart, name: 'Online Commerce', color: 'from-green-400 to-green-600' },
   { icon: FiShield, name: 'Versicherungen', color: 'from-blue-400 to-blue-600' },
-  { icon: FiHome, name: 'öffentlicher Sektor', color: 'from-purple-400 to-purple-600' },
   { icon: FiTruck, name: 'Transport & Logistik', color: 'from-orange-400 to-orange-600' },
   { icon: FiShoppingBag, name: 'Retail', color: 'from-pink-400 to-pink-600' },
   { icon: FiUser, name: 'Life Science', color: 'from-teal-400 to-teal-600' },
@@ -185,9 +172,10 @@ export default function Solutions() {
           </h1>
           <div className="w-24 h-0.5 bg-teal-400 mx-auto mb-8"></div>
           <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">
-            Unsere KI-gestützten Lösungen sind branchenübergreifend einsetzbar und 
-            lösen spezifische Herausforderungen sowohl in Großunternehmen als auch in 
-            kleinen und mittleren Unternehmen (KMU/PyMEs).
+            Von WordPress-Websites bis hin zu maßgeschneiderten KI-Lösungen —
+            wir helfen kleinen und mittleren Unternehmen (KMU), mit dem richtigen
+            digitalen Werkzeug zu wachsen. Bezahlbar, schnell umsetzbar und
+            auf Ihre Branche zugeschnitten.
           </p>
         </motion.div>
 
