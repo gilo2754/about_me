@@ -44,8 +44,8 @@ const featuredProjects = [
   {
     id: 3,
     icon: FiShoppingCart,
-    title: 'shop.vekpower.com',
-    subtitle: 'Online-Shop für Fitness & Sportequipment',
+    title: 'Online-Shop für Solaranlagen',
+    subtitle: 'shop.vekpower.com',
     description: 'Vollständiger E-Commerce-Shop mit modernem Design und optimierter User Experience. Schnell, mobilfreundlich und konversionsorientiert — ein Beispiel dafür, was wir für kleine Unternehmen aufbauen.',
     timeSaving: 'Verkauft 24/7 ohne manuellen Aufwand',
     features: [
