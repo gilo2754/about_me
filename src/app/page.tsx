@@ -56,11 +56,11 @@ export default function Home() {
             </Link>
             
             <a
-              href="mailto:info@unmega.com"
+              href="mailto:tech@unmega.com"
               className="group inline-flex items-center space-x-2 px-6 py-3 text-slate-300 hover:text-teal-400 transition-colors duration-200 font-mono text-sm"
             >
               <FiMail />
-              <span>info@unmega.com</span>
+              <span>tech@unmega.com</span>
             </a>
           </motion.div>
         </div>

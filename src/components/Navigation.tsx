@@ -24,8 +24,8 @@ const Navigation = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Link href="/" className="text-teal-400 text-2xl font-bold hover:text-teal-300 transition-colors">
-            
+          <Link href="/" className="text-teal-400 text-2xl font-bold hover:text-teal-300 transition-colors font-mono">
+            UnMega
           </Link>
         </motion.div>
 
