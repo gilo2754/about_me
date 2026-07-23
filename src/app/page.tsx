@@ -21,7 +21,7 @@ export default function Home() {
               UnMega
             </h1>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-400 mb-6">
-              KI-gestützte Geschäftslösungen für den Mittelstand.
+              Digitale Lösungen für kleine und mittlere Unternehmen.
             </h2>
           </motion.div>
 
@@ -31,13 +31,14 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-slate-400 text-lg max-w-lg leading-relaxed"
           >
-            Wir sind ein spezialisiertes Entwicklungsteam, das{' '}
-            <span className="text-teal-400">KI-gestützte Geschäftslösungen</span> für den deutschen Mittelstand entwickelt. 
-            Unser Team kombiniert moderne <span className="text-teal-400">Web-Technologien</span> 
-            mit künstlicher Intelligenz, um messbare Effizienzsteigerungen 
-            und Kostenreduktionen zu erreichen. Alle Lösungen sind{' '}
-            <span className="text-teal-400">DSGVO-konform</span> und entsprechen 
-            deutschen Datenschutzstandards.
+            Wir sind ein spezialisiertes Entwicklungsteam für{' '}
+            <span className="text-teal-400">kleine und mittlere Unternehmen</span> —
+            vom Einzelhändler bis zum wachsenden KMU.
+            Von <span className="text-teal-400">WordPress-Websites</span> bis hin zu
+            maßgeschneiderten <span className="text-teal-400">KI-Lösungen</span>:
+            wir bauen das, was Ihr Unternehmen wirklich braucht — bezahlbar,
+            schnell umsetzbar und{' '}
+            <span className="text-teal-400">DSGVO-konform</span>.
           </motion.p>
 
           <motion.div

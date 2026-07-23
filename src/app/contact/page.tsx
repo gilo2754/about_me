@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiGithub } from 'react-icons/fi';
+import { FiMail, FiMapPin } from 'react-icons/fi';
 import { useState } from 'react';
 
 interface ContactForm {
@@ -21,12 +21,6 @@ const contactInfo = [
     href: 'mailto:info@unmega.com'
   },
   {
-    icon: FiPhone,
-    label: 'Phone',
-    value: '+49 123 456 7890',
-    href: 'tel:+491234567890'
-  },
-  {
     icon: FiMapPin,
     label: 'Location',
     value: 'Cologne, Germany',
@@ -34,18 +28,6 @@ const contactInfo = [
   }
 ];
 
-const socialLinks = [
-  {
-    icon: FiLinkedin,
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/carlo-menjivar-01608452/'
-  },
-  {
-    icon: FiGithub,
-    label: 'GitHub',
-    href: 'https://github.com/gilo2754'
-  }
-];
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,15 +42,15 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
-    
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form data:', data);
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error('send failed');
       setSubmitSuccess(true);
       reset();
-      
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -142,32 +124,6 @@ export default function Contact() {
               })}
             </div>
 
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="pt-8"
-            >
-              <h3 className="text-lg font-semibold text-slate-100 mb-4">Folgen Sie mir</h3>
-              <div className="flex space-x-4">
-                {socialLinks.map((link) => {
-                  const IconComponent = link.icon;
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-teal-400/50 text-slate-400 hover:text-teal-400 transition-all duration-200 hover:-translate-y-1"
-                      aria-label={link.label}
-                    >
-                      <IconComponent size={20} />
-                    </a>
-                  );
-                })}
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Contact Form */}

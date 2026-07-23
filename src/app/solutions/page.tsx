@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiMessageCircle, FiBarChart, FiZap, FiHome, FiShield, FiTruck, FiShoppingBag, FiDollarSign, FiUser } from 'react-icons/fi';
+import { FiMessageCircle, FiBarChart, FiZap, FiHome, FiShield, FiTruck, FiShoppingBag, FiShoppingCart, FiUser, FiCoffee, FiScissors, FiHeart, FiTool, FiBookOpen, FiCamera } from 'react-icons/fi';
 
 const solutions = [
   {
@@ -10,10 +10,10 @@ const solutions = [
     description: 'Intelligente Dokumentensuche für Ihre Branche',
     applications: [
       {
-        industry: 'Banking & Finance',
-        useCase: 'Compliance-Dokumentation und Richtlinien',
-        benefit: 'Mitarbeiter finden Regelwerke sofort',
-        timeSaving: '8 Stunden/Woche pro Compliance-Team'
+        industry: 'Online Commerce',
+        useCase: 'Produktbeschreibungen, FAQ und Rückgaberichtlinien',
+        benefit: 'Kunden finden Antworten selbst — weniger Supportanfragen',
+        timeSaving: '5 Stunden/Woche bei Kundenanfragen gespart'
       },
       {
         industry: 'Versicherungen',
@@ -22,16 +22,28 @@ const solutions = [
         timeSaving: '6 Stunden/Woche pro Sachbearbeiter'
       },
       {
-        industry: 'öffentlicher Sektor',
-        useCase: 'Behördenhandbücher und Verfahrensrichtlinien',
-        benefit: 'Bürgerservices werden beschleunigt',
-        timeSaving: '10 Stunden/Woche pro Sachbearbeiter'
-      },
-      {
         industry: 'Life Science',
         useCase: 'Forschungsdokumentation und Compliance',
         benefit: 'Schneller Zugang zu kritischen Informationen',
         timeSaving: '12 Stunden/Woche pro Forschungsteam'
+      },
+      {
+        industry: 'Gastronomie',
+        useCase: 'Rezeptdatenbank und Allergieninformationen',
+        benefit: 'Sofortige Antworten zu Inhaltsstoffen und Zubereitungen',
+        timeSaving: '3 Stunden/Tag bei Kundenanfragen'
+      },
+      {
+        industry: 'Handwerk',
+        useCase: 'Technische Anleitungen und Sicherheitsvorschriften',
+        benefit: 'Schneller Zugriff auf Arbeitsanweisungen vor Ort',
+        timeSaving: '2 Stunden/Tag pro Techniker'
+      },
+      {
+        industry: 'Gesundheitswesen',
+        useCase: 'Patienteninformationen und Behandlungsleitfäden',
+        benefit: 'Effizientere Patientenberatung',
+        timeSaving: '4 Stunden/Woche pro Arztpraxis'
       }
     ]
   },
@@ -53,16 +65,34 @@ const solutions = [
         timeSaving: 'Planungszeit um 75% reduziert'
       },
       {
-        industry: 'Banking',
-        useCase: 'Risikobewertung und Portfolio-Analyse',
-        benefit: 'Bessere Investitionsentscheidungen',
-        timeSaving: 'Reporting-Zeit von Wochen auf Stunden'
+        industry: 'Online Commerce',
+        useCase: 'Conversion-Analyse und Kundenverhalten im Shop',
+        benefit: 'Optimierte Produktseiten und gezieltere Werbung',
+        timeSaving: 'Analyse von Tagen auf 30 Minuten reduziert'
       },
       {
         industry: 'Versicherungen',
         useCase: 'Schadensmuster und Risikoprofile',
         benefit: 'Präzisere Prämienberechnung',
         timeSaving: 'Analysezeit um 80% reduziert'
+      },
+      {
+        industry: 'Gastronomie',
+        useCase: 'Umsatzanalyse und Warenwirtschaft',
+        benefit: 'Optimierte Einkaufsplanung und Kostenkontrolle',
+        timeSaving: 'Wöchentliche Planung von 4 Stunden auf 30 Minuten'
+      },
+      {
+        industry: 'Dienstleistungen',
+        useCase: 'Kundenanalyse und Projektperformance',
+        benefit: 'Bessere Ressourcenplanung und Preisgestaltung',
+        timeSaving: 'Reporting um 70% beschleunigt'
+      },
+      {
+        industry: 'Kreativwirtschaft',
+        useCase: 'Projektanalyse und Kundentrends',
+        benefit: 'Datengestützte Angebotserstellung',
+        timeSaving: 'Marktanalyse von Tagen auf Stunden reduziert'
       }
     ]
   },
@@ -72,16 +102,10 @@ const solutions = [
     description: 'Prozessautomatisierung für wiederkehrende Aufgaben',
     applications: [
       {
-        industry: 'Banking',
-        useCase: 'Kreditantragsverarbeitung und KYC-Prozesse',
-        benefit: 'Vollautomatische Dokumentenprüfung',
-        timeSaving: '90% Automatisierung bei Standardanträgen'
-      },
-      {
-        industry: 'öffentlicher Sektor',
-        useCase: 'Bürgeranträge und Verwaltungsprozesse',
-        benefit: 'Digitale Antragsbearbeitung',
-        timeSaving: 'Bearbeitungszeit von Wochen auf Tage'
+        industry: 'Online Commerce',
+        useCase: 'Bestellabwicklung und automatische Kundenkommunikation',
+        benefit: 'Automatische Bestätigungen, Statusupdates und Rücksendungen',
+        timeSaving: '90% weniger manueller Aufwand bei Standardbestellungen'
       },
       {
         industry: 'Retail',
@@ -94,18 +118,41 @@ const solutions = [
         useCase: 'Laborberichte und Compliance-Dokumentation',
         benefit: 'Automatisierte Berichterstellung',
         timeSaving: '70% weniger Dokumentationsaufwand'
+      },
+      {
+        industry: 'Gastronomie',
+        useCase: 'Bestellannahme und Lieferantenmanagement',
+        benefit: 'Automatische Bestellverarbeitung und Lagerüberwachung',
+        timeSaving: '85% Automatisierung bei Standardbestellungen'
+      },
+      {
+        industry: 'Handwerk',
+        useCase: 'Auftragsverwaltung und Terminplanung',
+        benefit: 'Optimierte Ressourcenplanung und Kundenkommunikation',
+        timeSaving: 'Verwaltungsaufwand um 60% reduziert'
+      },
+      {
+        industry: 'Bildung',
+        useCase: 'Kursanmeldungen und Zertifikatserstellung',
+        benefit: 'Vollautomatische Verwaltung von Bildungsangeboten',
+        timeSaving: '80% weniger manuelle Verwaltungsarbeit'
       }
     ]
   }
 ];
 
 const industries = [
-  { icon: FiDollarSign, name: 'Banking & Finance', color: 'from-green-400 to-green-600' },
+  { icon: FiShoppingCart, name: 'Online Commerce', color: 'from-green-400 to-green-600' },
   { icon: FiShield, name: 'Versicherungen', color: 'from-blue-400 to-blue-600' },
-  { icon: FiHome, name: 'öffentlicher Sektor', color: 'from-purple-400 to-purple-600' },
   { icon: FiTruck, name: 'Transport & Logistik', color: 'from-orange-400 to-orange-600' },
   { icon: FiShoppingBag, name: 'Retail', color: 'from-pink-400 to-pink-600' },
-  { icon: FiUser, name: 'Life Science', color: 'from-teal-400 to-teal-600' }
+  { icon: FiUser, name: 'Life Science', color: 'from-teal-400 to-teal-600' },
+  { icon: FiCoffee, name: 'Gastronomie', color: 'from-amber-400 to-amber-600' },
+  { icon: FiScissors, name: 'Dienstleistungen', color: 'from-indigo-400 to-indigo-600' },
+  { icon: FiHeart, name: 'Gesundheitswesen', color: 'from-red-400 to-red-600' },
+  { icon: FiTool, name: 'Handwerk', color: 'from-gray-400 to-gray-600' },
+  { icon: FiBookOpen, name: 'Bildung', color: 'from-yellow-400 to-yellow-600' },
+  { icon: FiCamera, name: 'Kreativwirtschaft', color: 'from-violet-400 to-violet-600' }
 ];
 
 export default function Solutions() {
@@ -125,8 +172,10 @@ export default function Solutions() {
           </h1>
           <div className="w-24 h-0.5 bg-teal-400 mx-auto mb-8"></div>
           <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">
-            Unsere KI-gestützten Lösungen sind branchenübergreifend einsetzbar und 
-            lösen spezifische Herausforderungen in verschiedenen Wirtschaftszweigen.
+            Von WordPress-Websites bis hin zu maßgeschneiderten KI-Lösungen —
+            wir helfen kleinen und mittleren Unternehmen (KMU), mit dem richtigen
+            digitalen Werkzeug zu wachsen. Bezahlbar, schnell umsetzbar und
+            auf Ihre Branche zugeschnitten.
           </p>
         </motion.div>
 
@@ -140,7 +189,7 @@ export default function Solutions() {
           <h2 className="text-2xl font-bold text-slate-100 mb-8 text-center">
             Branchen, in denen wir aktiv sind
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
             {industries.map((industry, index) => {
               const IconComponent = industry.icon;
               return (
