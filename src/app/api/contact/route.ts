@@ -1,10 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+const MIN_SUBMIT_MS = 1500;
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 export async function POST(req: NextRequest) {
-  const { name, email, company, subject, message } = await req.json();
+  const { name, email, company, subject, message, website, elapsedMs } = await req.json();
 
   if (!name || !email || !subject || !message) {
     return NextResponse.json({ error: 'Fehlende Pflichtfelder' }, { status: 400 });
+  }
+
+  // Honeypot filled or submitted too fast to be human -> silently pretend success
+  if (website || typeof elapsedMs !== 'number' || elapsedMs < MIN_SUBMIT_MS) {
+    return NextResponse.json({ success: true });
   }
 
   const res = await fetch('https://api.brevo.com/v3/smtp/email', {
@@ -24,13 +40,13 @@ export async function POST(req: NextRequest) {
       subject: `Kontaktformular: ${subject}`,
       htmlContent: `
         <h2>Neue Nachricht vom Kontaktformular</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        ${company ? `<p><strong>Unternehmen:</strong> ${company}</p>` : ''}
-        <p><strong>Betreff:</strong> ${subject}</p>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        ${company ? `<p><strong>Unternehmen:</strong> ${escapeHtml(company)}</p>` : ''}
+        <p><strong>Betreff:</strong> ${escapeHtml(subject)}</p>
         <hr />
         <p><strong>Nachricht:</strong></p>
-        <p>${message.replace(/\n/g, '<br />')}</p>
+        <p>${escapeHtml(message).replace(/\n/g, '<br />')}</p>
       `,
     }),
   });
