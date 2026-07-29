@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { FiMail, FiMapPin, FiArrowUpRight } from 'react-icons/fi';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 
 interface ContactForm {
@@ -12,6 +12,7 @@ interface ContactForm {
   company?: string;
   subject: string;
   message: string;
+  website?: string;
 }
 
 const contactInfo = [
@@ -33,7 +34,8 @@ const contactInfo = [
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  
+  const formLoadedAt = useRef(Date.now());
+
   const {
     register,
     handleSubmit,
@@ -47,7 +49,7 @@ export default function Contact() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, elapsedMs: Date.now() - formLoadedAt.current }),
       });
       if (!res.ok) throw new Error('send failed');
       setSubmitSuccess(true);
@@ -246,6 +248,15 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-slate-100 mb-8">Nachricht senden</h2>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <input
+                {...register('website')}
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px', top: 0 }}
+              />
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-slate-300 text-sm font-medium mb-2">
