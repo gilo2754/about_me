@@ -72,7 +72,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-slate-100 mb-6">
-            <span className="text-teal-400 font-mono text-lg mr-4">04.</span>
+            <span className="text-teal-400 font-mono text-lg mr-4">05.</span>
             Kontakt aufnehmen
           </h1>
           <div className="w-24 h-0.5 bg-teal-400 mx-auto mb-8"></div>

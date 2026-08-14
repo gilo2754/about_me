@@ -12,7 +12,8 @@ const Navigation = () => {
     { name: 'Über uns', href: '/about', num: '01' },
     { name: 'Unser Portfolio', href: '/work', num: '02' },
     { name: 'Branchenlösungen', href: '/solutions', num: '03' },
-    { name: 'Kontakt', href: '/contact', num: '04' },
+    { name: 'KI-Beratung', href: '/ki-beratung', num: '04' },
+    { name: 'Kontakt', href: '/contact', num: '05' },
   ];
 
   return (
