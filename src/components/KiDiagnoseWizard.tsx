@@ -458,18 +458,20 @@ export default function KiDiagnoseWizard() {
                     Schlagen Sie 2 Termine für ein kurzes Kennenlerngespräch vor *
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input
-                      type="datetime-local"
-                      value={contact.callDate1}
-                      onChange={(e) => setContact((c) => ({ ...c, callDate1: e.target.value }))}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-slate-100 focus:border-teal-400 focus:outline-none transition-colors duration-200"
-                    />
-                    <input
-                      type="datetime-local"
-                      value={contact.callDate2}
-                      onChange={(e) => setContact((c) => ({ ...c, callDate2: e.target.value }))}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-slate-100 focus:border-teal-400 focus:outline-none transition-colors duration-200"
-                    />
+                     <input
+                                        type="text"
+                                        value={contact.callDate1}
+                                        onChange={(e) => setContact((c) => ({ ...c, callDate1: e.target.value }))}
+                                        placeholder="Date 1"
+                                        className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-500 focus:border-teal-400 focus:outline-none transition-colors duration-200"
+                                      />
+                   <input
+                                                          type="text"
+                                                          value={contact.callDate2}
+                                                          onChange={(e) => setContact((c) => ({ ...c, callDate2: e.target.value }))}
+                                                          placeholder="Date 2"
+                                                          className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-500 focus:border-teal-400 focus:outline-none transition-colors duration-200"
+                                                        />
                   </div>
                 </div>
               </div>
