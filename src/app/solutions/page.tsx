@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiMessageCircle, FiBarChart, FiZap, FiHome, FiShield, FiTruck, FiShoppingBag, FiShoppingCart, FiUser, FiCoffee, FiScissors, FiHeart, FiTool, FiBookOpen, FiCamera } from 'react-icons/fi';
+import Link from 'next/link';
+import { FiMessageCircle, FiBarChart, FiZap, FiHome, FiShield, FiTruck, FiShoppingBag, FiShoppingCart, FiUser, FiCoffee, FiScissors, FiHeart, FiTool, FiBookOpen, FiCamera, FiArrowUpRight } from 'react-icons/fi';
 
 const solutions = [
   {
@@ -209,6 +210,33 @@ export default function Solutions() {
                 </motion.div>
               );
             })}
+          </div>
+        </motion.div>
+
+        {/* KI-Beratung Callout */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mb-20 bg-gradient-to-r from-teal-400/10 to-blue-500/10 rounded-lg p-10 border border-teal-400/30"
+        >
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <h2 className="text-2xl font-bold text-slate-100 mb-3">
+                Nicht sicher, wo Sie anfangen sollen? Unsere KI-Beratung.
+              </h2>
+              <p className="text-slate-400 max-w-xl">
+                Analyse, Diagnose, Umsetzung und Begleitung — unser Hauptangebot
+                führt Sie strukturiert von der ersten Idee bis zur laufenden Lösung.
+              </p>
+            </div>
+            <Link
+              href="/ki-beratung"
+              className="group shrink-0 inline-flex items-center space-x-2 px-8 py-4 bg-teal-400 text-slate-900 rounded-lg font-semibold hover:bg-teal-300 transition-colors duration-200"
+            >
+              <span>KI-Beratung entdecken</span>
+              <FiArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
+            </Link>
           </div>
         </motion.div>
 

@@ -12,20 +12,18 @@ const teamMembers = [
     image: '/team/carlo.jpg'
   },
   {
-    name: 'Team Member 2',
-    role: 'Backend-Architekt (bald verfügbar)',
-    description: 'Wird das Team als Experte für Backend-Systeme und Cloud-Infrastruktur verstärken. Fokus auf skalierbare und sichere Lösungen.',
-    expertise: ['Cloud Architecture', 'DevOps', 'Database Design', 'API Development'],
-    image: '/team/member2.jpg',
-    coming: true
+    name: 'Mark Konrad',
+    role: 'Prozess- & Automatisierungsexperte',
+    description: 'Optimiert und automatisiert Geschäftsprozesse für kleine und mittlere Unternehmen. Sorgt dafür, dass wiederkehrende Abläufe schlank, zuverlässig und skalierbar laufen.',
+    expertise: ['Prozessautomatisierung', 'Workflow-Design', 'n8n', 'RPA', 'Systemintegration'],
+    image: '/team/mark.jpg'
   },
   {
-    name: 'Team Member 3',
-    role: 'UX/UI Designer (bald verfügbar)',
-    description: 'Wird für benutzerfreundliche und ansprechende Interfaces sorgen. Spezialist für moderne Design-Systeme und User Experience.',
-    expertise: ['UI/UX Design', 'Design Systems', 'User Research', 'Prototyping'],
-    image: '/team/member3.jpg',
-    coming: true
+    name: 'Leonardo Marrone',
+    role: 'Vertrieb & Marketing',
+    description: 'Verantwortet Vertrieb und Marketing bei UnMega. Verbindet die Bedürfnisse unserer Kunden mit den passenden Lösungen und sorgt für eine klare, überzeugende Kommunikation.',
+    expertise: ['Vertrieb', 'Marketingstrategie', 'Leadgenerierung', 'Kundenakquise', 'Content Marketing'],
+    image: '/team/leo.jpg'
   }
 ];
 
@@ -175,18 +173,8 @@ export default function About() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.7 + index * 0.2 }}
-                className={`relative p-6 rounded-lg border ${
-                  member.coming 
-                    ? 'bg-slate-800/30 border-slate-600' 
-                    : 'bg-slate-800/50 border-slate-700'
-                }`}
+                className="relative p-6 rounded-lg border bg-slate-800/50 border-slate-700"
               >
-                {member.coming && (
-                  <div className="absolute top-4 right-4 bg-teal-400/20 text-teal-400 px-2 py-1 rounded-full text-xs font-medium">
-                    Bald verfügbar
-                  </div>
-                )}
-                
                 <div className="text-center mb-4">
                   <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-teal-400/20 to-blue-500/20 rounded-full flex items-center justify-center">
                     <span className="text-2xl font-bold text-teal-400">
@@ -207,11 +195,7 @@ export default function About() {
                     {member.expertise.map((skill) => (
                       <span
                         key={skill}
-                        className={`px-2 py-1 text-xs rounded-full ${
-                          member.coming 
-                            ? 'bg-slate-700 text-slate-400' 
-                            : 'bg-slate-700 text-slate-300'
-                        }`}
+                        className="px-2 py-1 text-xs rounded-full bg-slate-700 text-slate-300"
                       >
                         {skill}
                       </span>

@@ -45,13 +45,21 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link
+              href="/ki-beratung"
+              className="group inline-flex items-center space-x-2 px-6 py-3 bg-teal-400 text-slate-900 rounded hover:bg-teal-300 transition-colors duration-200 font-mono text-sm font-medium"
+            >
+              <span>KI-Beratung entdecken</span>
+              <FiArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
+            </Link>
+
+            <Link
               href="/contact"
               className="group inline-flex items-center space-x-2 px-6 py-3 border border-teal-400 text-teal-400 rounded hover:bg-teal-400/10 transition-colors duration-200 font-mono text-sm"
             >
               <span>Kontakt aufnehmen</span>
               <FiArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
             </Link>
-            
+
             <a
               href="mailto:tech@unmega.com"
               className="group inline-flex items-center space-x-2 px-6 py-3 text-slate-300 hover:text-teal-400 transition-colors duration-200 font-mono text-sm"
