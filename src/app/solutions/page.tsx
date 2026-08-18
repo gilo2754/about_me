@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FiMessageCircle, FiBarChart, FiZap, FiHome, FiShield, FiTruck, FiShoppingBag, FiShoppingCart, FiUser, FiCoffee, FiScissors, FiHeart, FiTool, FiBookOpen, FiCamera, FiArrowUpRight } from 'react-icons/fi';
+import { FiMessageCircle, FiBarChart, FiZap, FiHome, FiTruck, FiShoppingBag, FiShoppingCart, FiCoffee, FiTool, FiBookOpen, FiCamera, FiArrowUpRight } from 'react-icons/fi';
 
 const solutions = [
   {
+    slug: 'smartdocs-ai',
     icon: FiMessageCircle,
     title: 'SmartDocs AI Assistant',
     description: 'Intelligente Dokumentensuche für Ihre Branche',
@@ -15,18 +16,6 @@ const solutions = [
         useCase: 'Produktbeschreibungen, FAQ und Rückgaberichtlinien',
         benefit: 'Kunden finden Antworten selbst — weniger Supportanfragen',
         timeSaving: '5 Stunden/Woche bei Kundenanfragen gespart'
-      },
-      {
-        industry: 'Versicherungen',
-        useCase: 'Produktdokumentation und Schadensprozesse',
-        benefit: 'Sachbearbeiter erhalten sofortige Antworten',
-        timeSaving: '6 Stunden/Woche pro Sachbearbeiter'
-      },
-      {
-        industry: 'Life Science',
-        useCase: 'Forschungsdokumentation und Compliance',
-        benefit: 'Schneller Zugang zu kritischen Informationen',
-        timeSaving: '12 Stunden/Woche pro Forschungsteam'
       },
       {
         industry: 'Gastronomie',
@@ -39,16 +28,11 @@ const solutions = [
         useCase: 'Technische Anleitungen und Sicherheitsvorschriften',
         benefit: 'Schneller Zugriff auf Arbeitsanweisungen vor Ort',
         timeSaving: '2 Stunden/Tag pro Techniker'
-      },
-      {
-        industry: 'Gesundheitswesen',
-        useCase: 'Patienteninformationen und Behandlungsleitfäden',
-        benefit: 'Effizientere Patientenberatung',
-        timeSaving: '4 Stunden/Woche pro Arztpraxis'
       }
     ]
   },
   {
+    slug: 'bi-dashboard',
     icon: FiBarChart,
     title: 'Business Intelligence Dashboard',
     description: 'KI-gestützte Datenanalyse für bessere Entscheidungen',
@@ -72,22 +56,10 @@ const solutions = [
         timeSaving: 'Analyse von Tagen auf 30 Minuten reduziert'
       },
       {
-        industry: 'Versicherungen',
-        useCase: 'Schadensmuster und Risikoprofile',
-        benefit: 'Präzisere Prämienberechnung',
-        timeSaving: 'Analysezeit um 80% reduziert'
-      },
-      {
         industry: 'Gastronomie',
         useCase: 'Umsatzanalyse und Warenwirtschaft',
         benefit: 'Optimierte Einkaufsplanung und Kostenkontrolle',
         timeSaving: 'Wöchentliche Planung von 4 Stunden auf 30 Minuten'
-      },
-      {
-        industry: 'Dienstleistungen',
-        useCase: 'Kundenanalyse und Projektperformance',
-        benefit: 'Bessere Ressourcenplanung und Preisgestaltung',
-        timeSaving: 'Reporting um 70% beschleunigt'
       },
       {
         industry: 'Kreativwirtschaft',
@@ -98,6 +70,7 @@ const solutions = [
     ]
   },
   {
+    slug: 'autoflow',
     icon: FiZap,
     title: 'AutoFlow - Automation Studio',
     description: 'Prozessautomatisierung für wiederkehrende Aufgaben',
@@ -113,12 +86,6 @@ const solutions = [
         useCase: 'Bestellabwicklung und Kundenservice',
         benefit: 'Automatische Orderverarbeitung',
         timeSaving: '85% weniger manuelle Eingriffe'
-      },
-      {
-        industry: 'Life Science',
-        useCase: 'Laborberichte und Compliance-Dokumentation',
-        benefit: 'Automatisierte Berichterstellung',
-        timeSaving: '70% weniger Dokumentationsaufwand'
       },
       {
         industry: 'Gastronomie',
@@ -144,13 +111,9 @@ const solutions = [
 
 const industries = [
   { icon: FiShoppingCart, name: 'Online Commerce', color: 'from-green-400 to-green-600' },
-  { icon: FiShield, name: 'Versicherungen', color: 'from-blue-400 to-blue-600' },
   { icon: FiTruck, name: 'Transport & Logistik', color: 'from-orange-400 to-orange-600' },
   { icon: FiShoppingBag, name: 'Retail', color: 'from-pink-400 to-pink-600' },
-  { icon: FiUser, name: 'Life Science', color: 'from-teal-400 to-teal-600' },
   { icon: FiCoffee, name: 'Gastronomie', color: 'from-amber-400 to-amber-600' },
-  { icon: FiScissors, name: 'Dienstleistungen', color: 'from-indigo-400 to-indigo-600' },
-  { icon: FiHeart, name: 'Gesundheitswesen', color: 'from-red-400 to-red-600' },
   { icon: FiTool, name: 'Handwerk', color: 'from-gray-400 to-gray-600' },
   { icon: FiBookOpen, name: 'Bildung', color: 'from-yellow-400 to-yellow-600' },
   { icon: FiCamera, name: 'Kreativwirtschaft', color: 'from-violet-400 to-violet-600' }
@@ -190,7 +153,7 @@ export default function Solutions() {
           <h2 className="text-2xl font-bold text-slate-100 mb-8 text-center">
             Branchen, in denen wir aktiv sind
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {industries.map((industry, index) => {
               const IconComponent = industry.icon;
               return (
@@ -199,7 +162,7 @@ export default function Solutions() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  className="text-center p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-teal-400/50 transition-all duration-200"
+                  className="text-center p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-teal-400/50 transition-all duration-200 w-full sm:w-[calc(33.333%-0.667rem)]"
                 >
                   <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${industry.color} flex items-center justify-center`}>
                     {IconComponent ? <IconComponent className="text-white" size={24} /> : <div className="w-6 h-6 bg-white rounded"></div>}
@@ -252,12 +215,21 @@ export default function Solutions() {
                 transition={{ duration: 0.6, delay: 0.4 + solutionIndex * 0.2 }}
                 className="bg-slate-800/30 rounded-lg p-8 border border-slate-700"
               >
-                <div className="flex items-center mb-6">
-                  <IconComponent className="text-teal-400 mr-4" size={32} />
-                  <div>
-                    <h2 className="text-2xl font-bold text-slate-100">{solution.title}</h2>
-                    <p className="text-slate-400">{solution.description}</p>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center">
+                    <IconComponent className="text-teal-400 mr-4" size={32} />
+                    <div>
+                      <h2 className="text-2xl font-bold text-slate-100">{solution.title}</h2>
+                      <p className="text-slate-400">{solution.description}</p>
+                    </div>
                   </div>
+                  <Link
+                    href={`/work#${solution.slug}`}
+                    className="group hidden sm:inline-flex shrink-0 items-center space-x-2 px-4 py-2 border border-teal-400/50 text-teal-400 rounded-lg text-sm font-medium hover:bg-teal-400/10 transition-colors duration-200"
+                  >
+                    <span>Live-Demo ansehen</span>
+                    <FiArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
+                  </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -84,6 +84,15 @@ export default function Home() {
             {/* Main content placeholder - will be replaced with actual photo */}
             <div className="relative w-80 h-80 mx-auto bg-gradient-to-br from-slate-800 to-slate-700 rounded-full flex items-center justify-center float-animation">
               <div className="text-4xl text-teal-400/50 font-bold">UnMega</div>
+
+              {/* CTA over the animation */}
+              <Link
+                href="/ki-beratung/diagnose"
+                className="group absolute bottom-10 right-6 z-20 inline-flex items-center space-x-2 px-6 py-3 bg-teal-400 text-slate-900 rounded-lg font-mono text-sm font-semibold shadow-lg shadow-teal-400/30 hover:bg-teal-300 transition-colors duration-200"
+              >
+                <span>KI-Diagnose starten</span>
+                <FiArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
+              </Link>
             </div>
 
             {/* Floating elements */}
