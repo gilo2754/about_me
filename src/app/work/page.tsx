@@ -1,11 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiExternalLink, FiZap, FiMessageCircle, FiBarChart, FiShoppingCart } from 'react-icons/fi';
+import { FiExternalLink, FiZap, FiMessageCircle, FiBarChart, FiCopy, FiCheck } from 'react-icons/fi';
+import { useState } from 'react';
 
 const featuredProjects = [
   {
     id: 1,
+    slug: 'smartdocs-ai',
     icon: FiMessageCircle,
     title: 'SmartDocs AI Assistant',
     subtitle: 'RAG Chatbot für Unternehmensdokumentation',
@@ -17,13 +19,11 @@ const featuredProjects = [
       'Zitiert exakte Quellen',
       'Mehrsprachig (DE/EN)',
       'Konversationsverlauf'
-    ],
-    demoDescription: 'Lädt fiktives "Mitarbeiter Handbuch" → Beantwortet Fragen wie "Wie viele Urlaubstage habe ich?" und "Prozess für Krankmeldung?"',
-    liveUrl: 'https://smartdocs-demo.unmega.com',
-    videoUrl: ''
+    ]
   },
   {
     id: 2,
+    slug: 'bi-dashboard',
     icon: FiBarChart,
     title: 'Business Intelligence Dashboard',
     subtitle: 'Analytics + KI Insights automatisch',
@@ -36,31 +36,11 @@ const featuredProjects = [
       'KI Insights: Automatische Analyse und Empfehlungen',
       'PDF Export für Berichte',
       'Einfache Vorhersagen und Trends'
-    ],
-    demoDescription: 'Verkaufsdaten-Dashboard zeigt: monatliche Verkäufe, Top-Produkte, Kunden. KI generiert Analyse: "Verkäufe fielen 15% im März..." mit Handlungsempfehlungen.',
-    liveUrl: 'https://bi-dashboard-demo.unmega.com',
-    videoUrl: ''
+    ]
   },
   {
     id: 3,
-    icon: FiShoppingCart,
-    title: 'Online-Shop für Solaranlagen',
-    subtitle: 'shop.vekpower.com',
-    description: 'Vollständiger E-Commerce-Shop mit modernem Design und optimierter User Experience. Schnell, mobilfreundlich und konversionsorientiert — ein Beispiel dafür, was wir für kleine Unternehmen aufbauen.',
-    timeSaving: 'Verkauft 24/7 ohne manuellen Aufwand',
-    features: [
-      'Responsives Design für alle Geräte',
-      'Produktkatalog mit Filterfunktion',
-      'Warenkorb & sichere Checkout-Integration',
-      'SEO-optimiert für mehr organischen Traffic',
-      'Einfache Bestandsverwaltung'
-    ],
-    demoDescription: 'Live-Shop unter shop.vekpower.com — von der Produktseite bis zum Checkout ein flüssiges Einkaufserlebnis, gebaut für kleine Unternehmen mit großen Ambitionen.',
-    liveUrl: 'https://shop.vekpower.com',
-    videoUrl: ''
-  },
-  {
-    id: 4,
+    slug: 'autoflow',
     icon: FiZap,
     title: 'AutoFlow - Automation Studio',
     subtitle: 'KI-gestützte Prozessautomatisierung',
@@ -72,14 +52,23 @@ const featuredProjects = [
       'Kundensupport: E-Mail → KI kategorisiert → Team-Weiterleitung',
       'Social Media: KI generiert Posts → Plattform-übergreifend',
       'Berichtsgenerierung: Daten sammeln → KI zusammenfassen → PDF per E-Mail'
-    ],
-    demoDescription: 'Live-Workflow-Demonstration: E-Mail senden → KI antwortet automatisch → Slack-Benachrichtigung erscheint in Echtzeit.',
-    liveUrl: 'https://autoflow-demo.unmega.com',
-    videoUrl: ''
+    ]
   }
 ];
 
 export default function Work() {
+  const [copied, setCopied] = useState(false);
+  const email = 'tech@unmega.com';
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (error) {
+      console.error('Error copying email:', error);
+    }
+  };
 
   return (
     <div className="min-h-screen pt-20 px-6 md:px-12 lg:px-24 py-16">
@@ -123,10 +112,11 @@ export default function Work() {
             return (
               <motion.div
                 key={project.id}
+                id={project.slug}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center scroll-mt-24 ${
                   index % 2 === 1 ? 'lg:text-right' : ''
                 }`}
               >
@@ -140,14 +130,6 @@ export default function Work() {
                       <div className="text-center px-6">
                         <h3 className="text-xl font-bold text-slate-100 mb-2">{project.title}</h3>
                         <p className="text-slate-400 text-sm">{project.subtitle}</p>
-                      </div>
-                      
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-teal-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="text-center">
-                          <FiExternalLink className="text-teal-400 mx-auto mb-2" size={48} />
-                          <p className="text-teal-400 font-medium">Demo ansehen</p>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -189,26 +171,6 @@ export default function Work() {
                     </ul>
                   </div>
 
-                  {/* Demo Description */}
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-slate-100 font-medium mb-2">Live-Demo:</h4>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                      {project.demoDescription}
-                    </p>
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className={`flex items-center space-x-4 ${index % 2 === 1 ? 'lg:justify-end' : ''}`}>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 px-6 py-3 bg-teal-400 text-slate-900 rounded-lg font-medium hover:bg-teal-300 transition-colors duration-200"
-                    >
-                      <FiExternalLink size={16} />
-                      <span>Live Demo</span>
-                    </a>
-                  </div>
                 </div>
               </motion.div>
             );
@@ -238,11 +200,20 @@ export default function Work() {
               <FiExternalLink size={16} />
             </a>
             <a
-              href="mailto:carlo@unmega.com"
+              href={`mailto:${email}`}
               className="inline-flex items-center space-x-2 px-8 py-4 border border-teal-400 text-teal-400 rounded-lg font-medium hover:bg-teal-400/10 transition-colors duration-200"
             >
               <span>Direkt kontaktieren</span>
             </a>
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              className="inline-flex items-center space-x-2 px-4 py-4 border border-slate-600 text-slate-400 rounded-lg font-medium hover:border-teal-400/50 hover:text-teal-400 transition-colors duration-200"
+              aria-label="E-Mail-Adresse kopieren"
+            >
+              {copied ? <FiCheck size={16} className="text-teal-400" /> : <FiCopy size={16} />}
+              <span>{copied ? 'Kopiert!' : email}</span>
+            </button>
           </div>
         </motion.div>
       </div>
